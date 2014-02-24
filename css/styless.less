@@ -1,0 +1,126 @@
+/*http://pingvisha.ru*/
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  width:100%;
+  height:100%;
+  font-size: 100.01%;
+}
+
+body {
+  font: 62.5%/1.41 'Simonetta',Helvetica, Arial, sans-serif;
+  width:100%;
+  height:100%;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a, a:focus, a img, a img:focus {
+  border: 0 none;
+}
+
+a:focus, *:focus {
+/* noFocusLine: expression(this.onFocus=this.blur()); */
+}
+
+a, a img, textarea, input {
+  outline: 0 none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+
+
+@import "mixins.less";
+
+/*Placeholder color*/
+@black: #000;
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    @black;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    @black;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    @black;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    @black;
+}
+textarea::-webkit-input-placeholder { /* WebKit browsers */
+    color:    @black;
+}
+textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    @black;
+}
+textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    @black;
+}
+textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    @black;
+}
+
+/* Secondary section */
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+
+  .empty {
+    position: relative;
+    height: 50px;
+  }
+
+}
+
+/*Footer*/
+footer {
+    position: relative;
+    margin-top: -50px;
+    height: 50px;
+    width: 100%;
+}
+
+
