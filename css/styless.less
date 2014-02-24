@@ -65,6 +65,17 @@ h1, h2, h3, h4, h5, h6 {
 .text {
     color: #494949;
     font-size: 15px;
+    h1 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 14px;
+    }
+    a {
+        color: #006699;
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 
@@ -161,9 +172,6 @@ footer {
         height: inherit;
         display: block;
     }
-}
-.no_banner {
-    background: #cccccc;
 }
 .top_line {
     margin-top: 38px;
@@ -266,6 +274,10 @@ footer {
             }
         }
 
+    }
+    .active {
+        color: #999999;
+        text-decoration: none;
     }
 }
 .blogs {
@@ -493,10 +505,55 @@ footer {
     .description_block {
         padding-bottom: 31px ;
     }
+    .top_banner {
+        background: #cccccc;
+    }
 }
 .form_subscribe {
     margin-top: 10px;
     input[type="text"], input[type="email"] {
         width: 147px;
+    }
+}
+
+/*Text page*/
+.text_page {
+    width: 622px;
+    border: 1px solid #cccccc;
+    background: #FFFFFF;
+    float: left;
+    .text {
+        width: 430px;
+        padding: 18px 21px 30px 21px;
+        font-size: 12px;
+        p {
+            line-height: 23px;
+            font-family: Arial, sans-serif;
+        }
+        p + p {
+            margin-top: 5px;
+        }
+    }
+}
+.user_block {
+    .name_user {
+        color: #000000;
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+    border: 1px solid #cccccc;
+    background: #FFFFFF;
+    width: 282px;
+    margin-left: 648px;
+    padding: 14px;
+}
+.user_link_list {
+    a {
+        font-size: 11px;
+        line-height: 18px;
+        color: #006699;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
