@@ -96,7 +96,7 @@ a {
 @import "mixins.less";
 
 /*Placeholder color*/
-@black: #000;
+@black: #666;
 input::-webkit-input-placeholder { /* WebKit browsers */
     color:    @black;
 }
@@ -203,6 +203,8 @@ footer {
     position: relative;
     padding: 10px 25px 9px 14px;
     height: 55px;
+    font-weight: bold;
+    font-family: 'PT Serif', serif;
     .logo {
         display: block;
         float: left;
@@ -248,7 +250,7 @@ footer {
     .pay_input {
         background: #edd89b;
         border: 1px solid #84723d;
-        font-size: 19px;
+        font-size: 16px;
         font-weight: bold;
         width: 95px;
         height: 21px;
@@ -261,7 +263,7 @@ footer {
     }
     .pay_btn {
         height: 23px;
-        line-height: 23px;
+        //line-height: 23px;
         color: #FFFFFF;
         background: #39823c;
         font-size: 11px;
@@ -389,12 +391,12 @@ footer {
 }
 .projects {
     background: #d84040;
-    padding: 15px 24px 4px 17px;
+    padding: 15px 33px 4px 17px;
     margin-bottom: 35px;
     li {
         margin-bottom: 20px;
         img {
-            max-width: 260px;
+            max-width: 250px;
             margin-bottom: 2px;
         }
     }
@@ -429,6 +431,7 @@ footer {
         font-size: 13px;
         line-height: 19px;
         color: #494949;
+        font-family: Arial, sans-serif;
         p + p {
             margin-top: 5px;
         }
@@ -462,6 +465,7 @@ footer {
         margin-top: 5px;
         font-size: 11px;
         color: #494949;
+        font-family: Arial, sans-serif;
     }
     a {
         color: #006699;
@@ -561,6 +565,7 @@ footer {
         color: #000000;
         font-size: 13px;
         margin-bottom: 3px;
+        font-weight: bold;
     }
     border: 1px solid #cccccc;
     background: #FFFFFF;
@@ -573,6 +578,7 @@ footer {
         font-size: 11px;
         line-height: 18px;
         color: #006699;
+        font-family: Arial, sans-serif;
         &:hover {
             text-decoration: none;
         }
