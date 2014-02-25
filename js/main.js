@@ -20,4 +20,11 @@ function map (address) {
     }
 }
 $(document).ready(function() {
+    $('.pay_input').autoNumeric('init', {
+        aSep: ' ',
+        aSign: ' a',
+        pSign: 's',
+        aPad: false
+    });
+    $('.pay_input').autoNumeric('set', 1000);
 });

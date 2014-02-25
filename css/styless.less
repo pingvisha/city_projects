@@ -84,7 +84,15 @@ a {
     }
 }
 
-
+@font-face {
+    font-family: 'ALSRublRegular';
+    src: url('../font/rouble.eot');
+    src: url('../font/rouble.eot?#iefix') format('embedded-opentype'),
+    url('../font/rouble.woff') format('woff'),
+    url('../font/rouble.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 @import "mixins.less";
 
 /*Placeholder color*/
@@ -239,10 +247,11 @@ footer {
         width: 95px;
         height: 21px;
         line-height: 21px;
-        padding: 0;
+        padding: 0 5px;
         margin: 0;
         vertical-align: top;
         margin-right: 7px;
+        font-family: 'ALSRublRegular', Arial, sans-serif;
     }
     .pay_btn {
         height: 23px;
