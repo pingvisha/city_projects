@@ -27,4 +27,9 @@ $(document).ready(function() {
         aPad: false
     });
     $('.pay_input').autoNumeric('set', 1000);
+
+    if ($('#main_map').length) {
+        initialize();
+        codeAddress();
+    }
 });

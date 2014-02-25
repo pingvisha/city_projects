@@ -7,8 +7,55 @@
 <body>
 	<div class = "wrapper">
 		<div class = "maincontent">
-            <div class="main_map">
-
+            <div class="main_map" id="main_map">
+                <!-- map -->
+                <script type="text/javascript"
+                        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru">
+                </script>
+                <!-- map -->
+                <script type="text/javascript">
+                    var geocoder;
+                    var map;
+                    function initialize() {
+                        geocoder = new google.maps.Geocoder();
+                        var latlng = new google.maps.LatLng(57.766108,40.979877);
+                        var mapOptions = {
+                            zoom: 4,
+                            center: latlng,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            panControl: false,
+                            zoomControl: false,
+                            scaleControl: false,
+                            mapTypeControl: false,
+                            streetViewControl: false,
+                            styles: styles
+                        }
+                        map = new google.maps.Map(document.getElementById('main_map'), mapOptions);
+                    }
+                    function codeAddress() {
+                        //Вставить адрес
+                        var address = "Москва";
+                        geocoder.geocode( { 'address': address}, function(results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                map.setCenter(results[0].geometry.location);
+                                /*var marker = new google.maps.Marker({
+                                    map: map,
+                                    position: results[0].geometry.location
+                                });*/
+                            } else {
+                                alert('Geocode was not successful for the following reason: ' + status);
+                            }
+                        });
+                    }
+                    var styles = [
+                        {
+                            stylers: [
+                                { "lightness": -41 },
+                                { "gamma": 0.33 }
+                            ]
+                        }
+                    ];
+                </script>
             </div>
             <div class="container">
                 <div class="top_line">
@@ -23,7 +70,7 @@
                         <div class="bg_right"></div>
                     </div>
                 </div>
-                <!--<div class="hello_block">
+                <div class="hello_block">
                     <p class="hello_block_title">Привет, Россия!</p>
                     <p>Перед вами карта отделений городских проектов.</p>
                     <select name="">
@@ -43,8 +90,9 @@
                             <a href="#" class="tw"></a>
                         </li>
                     </ul>
-                </div>-->
-                <div class="main_login_form">
+                </div>
+                <!-- Форма входа -->
+                <!--<div class="main_login_form">
                     <p class="hello_block_title">Привет, Россия!</p>
                     <form action="" method="POST">
                         <div class="input_div">
@@ -59,6 +107,7 @@
                     </form>
                     <a href="#">Регистрация на сайте</a>
                 </div>
+                -->
             </div>
 		</div>
 		<div class = "empty"></div>
