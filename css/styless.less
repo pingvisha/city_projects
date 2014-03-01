@@ -205,6 +205,14 @@ footer {
     height: 55px;
     font-weight: bold;
     font-family: 'PT Serif', serif;
+    .edit_btn {
+        top: 25px;
+    }
+    &:hover {
+        .edit_btn {
+            display: block;
+        }
+    }
     .logo {
         display: block;
         float: left;
@@ -296,6 +304,9 @@ footer {
                 text-decoration: none;
             }
         }
+        .add_menu {
+            color: #d84040;
+        }
 
     }
     .active {
@@ -368,6 +379,7 @@ footer {
     padding: 13px 16px;
     margin-bottom: 24px;
     line-height: 23px;
+    position: relative;
     p + p {
         margin-top: 5px;
     }
@@ -376,6 +388,11 @@ footer {
         font-weight: bold;
         margin-top: 4px;
     }
+    &:hover {
+        .edit_btn {
+            display: block;
+        }
+    }
 }
 .address_block {
     .address_title {
@@ -383,10 +400,22 @@ footer {
         font-size: 17px;
         font-weight: bold;
         margin-bottom: 20px;
+        position: relative;
+        &:hover {
+            .edit_btn {
+                display: block;
+            }
+        }
     }
     .map {
         width: 300px;
         height: 314px;
+        position: relative;
+        &:hover {
+            .edit_btn {
+                display: block;
+            }
+        }
     }
 }
 .projects {
@@ -447,9 +476,15 @@ footer {
             height: inherit;
         }
     }
+    &:hover {
+        .edit_btn {
+            display: block;
+        }
+    }
 }
 .login_form {
     .clearfix;
+    position: relative;
     padding: 15px;
     margin-bottom: 21px;
     border: 1px solid #cccccc;
@@ -566,12 +601,27 @@ footer {
         font-size: 13px;
         margin-bottom: 3px;
         font-weight: bold;
+        span {
+            font-weight: normal;
+        }
     }
     border: 1px solid #cccccc;
     background: #FFFFFF;
     width: 282px;
     margin-left: 648px;
     padding: 14px;
+    position: relative;
+    &:hover {
+        .edit_btn {
+            display: block;
+        }
+    }
+}
+.column3 {
+    .user_block {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
 }
 .user_link_list {
     a {
@@ -651,4 +701,125 @@ footer {
     font-family: Arial, sans-serif;
     font-size: 12px;
     margin-right: 62px;
+}
+.edit_btn {
+    position: absolute;
+    left: -37px;
+    top: 50%;
+    background: url("../img/icons/edit.png") no-repeat;
+    width: 47px;
+    height: 32px;
+    display: none;
+    z-index: 5;
+}
+.column3 {
+    .edit_btn {
+        left: auto;
+        right: -34px;
+        background: url("../img/icons/edit_right.png") no-repeat;
+    }
+}
+.edit_mode {
+    color: #d84040;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.popup_bg {
+    display: none;
+    position: fixed;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("../img/back/popup_bg.png");
+    z-index: 100;
+    &:after {
+        display: inline-block;
+        height: 100%;
+        width: 0;
+        vertical-align: middle;
+        content: ''
+    }
+    .popup {
+        background: #FFFFFF;
+        margin: 0 auto;
+        width: 560px;
+        .border-radius(10px);
+        text-align: left;
+        display: inline-block;
+        position: relative;
+        padding: 30px;
+        vertical-align: middle;
+        label {
+            display: block;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            margin-bottom: 5px;
+            color: #494949;
+        }
+        input {
+            width: 360px;
+            border: 1px solid #999999;
+            font-size: 12px;
+            padding: 0 5px;
+            height: 22px;
+            line-height: 22px;
+        }
+        textarea {
+            padding: 5px;
+            font-size: 12px;
+            width: 360px;
+            height: 108px;
+            border: 1px solid #999999;
+            resize: none;
+            font-family: Arial, sans-serif;
+        }
+    }
+    .popup_title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #494949;
+    }
+    .form_section {
+        margin-bottom: 10px;
+    }
+    .popup_btn {
+        li {
+            .inlineblock;
+            height: 32px;
+            margin-right: 40px;
+            a {
+                display: block;
+                padding-left: 40px;
+                line-height: 32px;
+                text-decoration: underline;
+                font-size: 13px;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .save {
+            background: url("../img/icons/save.png") no-repeat;
+            a {
+                color: #8dc869;
+            }
+        }
+        .close {
+            background: url("../img/icons/close.png") no-repeat;
+            a {
+                color: #d84040;
+            }
+        }
+        .disable {
+            .opacity(0.3);
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }

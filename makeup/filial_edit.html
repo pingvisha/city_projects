@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Edit filial city</title>
+	[[blocks/default/head.html*1]]
+</head>
+<body>
+	<div class = "wrapper">
+		<div class = "maincontent">
+            <div class="top_banner">
+                <img src="/img/top_banner.png" alt="">
+            </div>
+            <div class="container">
+                <div class="top_line">
+                    <div class="title_block">
+                        <a class="logo" href="/">
+                            <img src="/img/logo.png" alt="">
+                        </a>
+                        <div class="title_text">
+                            <p class="slogan">Ростовские Борцы за Справедливость</p>
+                            <p class="city">Ростов-на-дону</p>
+                        </div>
+                        <div class="bg_right"></div>
+                        <a href="#" class="edit_btn"></a>
+                    </div>
+                    <div class="pay_block">
+                        <form action="">
+                            <p>Наше отделение функционирует благодарявашим пожертвованиям, Поддержите наш проект!</p>
+                            <div>
+                                <input type="text" value="1000" name="" class="pay_input">
+                                <input type="submit" class="pay_btn" value="Пожертвовать">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="menu_line">
+                    <ul class="menu">
+                        <li>
+                            <a href="#">Наши проекты</a>
+                        </li>
+                        <li>
+                            <a href="#" class="active">О «Борцах»</a>
+                        </li>
+                        <li>
+                            <a href="#">Пресса о нас</a>
+                        </li>
+                        <li>
+                            <a href="#" class="add_menu">Добавить страницу</a>
+                        </li>
+                    </ul>
+                    <div class="blogs">
+                        <p class="blogs_text">
+                            Не знаешь с чего начать?
+                            Подпишись на наши блоги:
+                        </p>
+                        <ul class="blogs_link">
+                            <li>
+                                <a href="#" class="vk"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="fb"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="tw"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="main">
+                    <div class="column">
+                        <div class="description_block text">
+                            <p>Дорогие ростовчане! Мы — группа независимых жителей Ростова-на-дону, объединенные желанием сделать наш город лучше.</p>
+                            <p>Узнайте чего мы уже добились в списке завершенных проектов, подписывайтесь на наши блоги, чтобы следить за тем, чем мы заняты в данный момент и жертвуйте деньги на нашу работу.</p>
+                            <div class="autor">Ростовские Борцы за Справедливость</div>
+                            <a href="#" class="edit_btn"></a>
+                        </div>
+                        <div class="address_block">
+                            <div class="address_title">
+                                Мы встречаемся 21 марта
+                                в кафе «Прелюдия» на пересечении
+                                ул. Тельмана и Университетского пер.
+                                <a href="#" class="edit_btn"></a>
+                            </div>
+
+                            <div class="map" id="map">
+                                <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+                                <script type="text/javascript">
+                                    ymaps.ready(map ("Ростов-на-дону, Университетского пер. д. 72"));
+                                </script>
+                                <a href="#" class="edit_btn"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column column2">
+                        <div class="projects">
+                            <p class="projects_title">
+                                Текущие проекты
+                            </p>
+                            <ul class="project_list">
+                                <li>
+                                    <img src="/img/projects/p1.png" alt="">
+                                    <a class="project_link" href="#">Реконструкция Ворошиловского моста</a>
+                                </li>
+                                <li>
+                                    <img src="" alt="">
+                                    <img src="/img/projects/p1.png" alt="">
+                                    <a class="project_link" href="#">Исследование причинвозникновения пробок в Ростове</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sponsor">
+                            <p class="sponsor_title">Станьте спонсором</p>
+                            <div class="sponsor_text">
+                                <p>Станьте спонсором “Ростовских борцов”! Таким образом, стратегия поведения, выгодная отдельному человеку, ведет к коллективному проигрышу.</p>
+                                <p>Воспитание абсурдно отталкивает эриксоновский гипноз, как и предсказывает теория о бесполезном знании.</p>
+                            </div>
+                            <div class="sponsor_img">
+                                <img src="/img/sponsor.png" alt="">
+                            </div>
+                            <a href="#" class="edit_btn"></a>
+                        </div>
+                    </div>
+                    <div class="column column3">
+                        <div class="user_block">
+                            <p class="name_user">Иван Масловский, <span>менеджер</span></p>
+                            <p class="edit_mode">Режим редактирования</p>
+                            <ul class="user_link_list">
+                                <li>
+                                    <a href="#">Выйти</a>
+                                </li>
+                            </ul>
+                            <a href="#" class="edit_btn"></a>
+                        </div>
+                        <div class="group_block">
+                            <p class="group_title">Группа ВКонтакте</p>
+
+
+                            <script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>                            <!-- VK Widget -->
+                            <div id="vk_groups"></div>
+                            <script type="text/javascript">
+                                VK.Widgets.Group("vk_groups", {mode: 0, width: "279", height: "469", color1: 'FFFFFF', color2: '2B587A', color3: '494949'}, 20003922);
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class = "empty"></div>
+        <!--popup-->
+        <div class="popup_bg">
+            <div class="popup">
+                <form action="">
+                    <div class="popup_title">Редактирование текста спонсорского блока</div>
+                    <div class="form_section">
+                        <label>Заголовок</label>
+                        <input type="text">
+                    </div>
+                    <div class="form_section">
+                        <label>Текст</label>
+                        <textarea></textarea>
+                    </div>
+                    <ul class="popup_btn">
+                        <li class="save disable">
+                            <a href="#">Сохранить изменения</a>
+                        </li>
+                        <li class="close">
+                            <a href="#">Закрыть без сохранения</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <!-- end popup -->
+	</div>
+	[[blocks/default/footer.html*1]]
+    <!-- WEB STUDIO PINGVISHA - http://pingvisha.ru  -->
+</body>
+</html>

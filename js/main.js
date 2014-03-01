@@ -32,4 +32,16 @@ $(document).ready(function() {
         initialize();
         codeAddress();
     }
+
+    var popup = $(".popup_bg");
+    $(".edit_btn").on("click", function () {
+       popup.show();
+        return false;
+    });
+    $(".popup_btn .close").on("click", function () {
+       if (!$(this).hasClass("disable")) {
+           popup.hide();
+           return false;
+       }
+    });
 });
