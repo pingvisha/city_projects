@@ -21,8 +21,8 @@ function map (address) {
 }
 $(document).ready(function() {
     $('.pay_input').autoNumeric('init', {
-        aSep: ' ',
-        aSign: ' a',
+        aSep: '',
+        aSign: 'a',
         pSign: 's',
         aPad: false
     });
