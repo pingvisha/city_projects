@@ -44,4 +44,23 @@ $(document).ready(function() {
            return false;
        }
     });
+    $(window).load( function () {
+        var max_height_col = 0;
+        var column = $(".main > .column");
+        column.each(function () {
+            if ( max_height_col < $(this).height()) max_height_col = $(this).height();
+        });
+        column.each(function (index) {
+            var shift = max_height_col - $(this).height();
+            console.log("shift" + shift);
+            if ( shift != 0) {
+                if (index == 0) change_margin($(".address_block"), shift);
+                if (index == 1) change_margin($(".sponsor"), shift);
+                if (index == 2) change_margin($(".group_block"), shift);
+            }
+        });
+        function change_margin (elem, shift) {
+            elem.css("margin-top", parseInt(elem.prev().css("margin-bottom"))+shift);
+        }
+    });
 });
