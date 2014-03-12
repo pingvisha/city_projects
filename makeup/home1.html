@@ -1,0 +1,190 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Карта</title>
+	[[blocks/default/head.html*1]]
+</head>
+<body>
+	<div class = "wrapper">
+		<div class = "maincontent">
+            <div class="main_map" id="main_map">
+                <!-- map -->
+                <script type="text/javascript"
+                        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru">
+                </script>
+                <script type="text/javascript"
+                        src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js">
+                </script>
+
+                <!-- map -->
+                <script type="text/javascript">
+                    var geocoder;
+                    var map;
+                    function initialize() {
+                        geocoder = new google.maps.Geocoder();
+                        var latlng = new google.maps.LatLng(57.766108,40.979877);
+                        var mapOptions = {
+                            zoom: 4,
+                            center: latlng,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP,
+                            panControl: false,
+                            zoomControl: false,
+                            scaleControl: true,
+                            mapTypeControl: false,
+                            streetViewControl: false,
+                            styles: styles
+                        }
+                        map = new google.maps.Map(document.getElementById('main_map'), mapOptions);
+
+                        $.getJSON( "/filials/filial/list/index.php", function( data ) {
+                            $.each(data, function (i, filial)
+                            {
+                                var myLatLng = new google.maps.LatLng(filial['loc']['lat'],filial['loc']['lng']);
+                                var divClass = filial['active'] ? "city_marker active" : "city_marker";
+                                var labelCity = '<div class="'+ divClass+ '" data-city="'+filial['alias']+'">' +
+                                        '<div class="name">' + filial['name']+ '</div>' +
+                                        '<div class="cnt"><span class="icon-people">' + filial['cnt']+ '</span></div>' +
+                                        '</div>';
+
+                                var myOptions = {
+                                    content: labelCity,
+                                    boxStyle: {
+                                        textAlign: "center",
+                                        fontSize: "8pt",
+                                        width: "75px",
+                                        color: "#FFF"
+                                    },
+                                    disableAutoPan: true,
+                                    pixelOffset: new google.maps.Size(-36, -33),
+                                    position: myLatLng,
+                                    closeBoxURL: "",
+                                    isHidden: false,
+                                    enableEventPropagation: true
+                                };
+
+                                var label = new InfoBox(myOptions);
+                                label.open(map);
+
+                                var img_url = filial['active']
+                                        ? '/filials/img/opacity_img.png'
+                                        : '/filials/img/opacity_img.png';
+
+                                var image = {
+                                    url: img_url,
+                                    size: new google.maps.Size(74, 65),
+                                    origin: new google.maps.Point(0,0),
+                                    anchor: new google.maps.Point(37, 33)
+                                };
+
+                                var marker = new google.maps.Marker({
+                                    position: myLatLng,
+                                    map: map,
+                                    icon: image,
+                                });
+
+                                google.maps.event.addListener(marker, 'click', function() {
+                                    window.location = '/filials/f/'+filial['alias'];
+                                });
+                            });
+                        });
+                    }
+                    function codeAddress() {
+                        //Вставить адрес
+                        var address = "Москва";
+                        geocoder.geocode( { 'address': address}, function(results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                map.setCenter(results[0].geometry.location);
+                                /*var marker = new google.maps.Marker({
+                                 map: map,
+                                 position: results[0].geometry.location
+                                 });*/
+                            } else {
+                                alert('Geocode was not successful for the following reason: ' + status);
+                            }
+                        });
+                    }
+                    var styles = [
+                        {
+                            stylers: [
+                                { "lightness": -41 },
+                                { "gamma": 0.33 }
+                            ]
+                        }
+                    ];
+                </script>
+            </div>
+            <div class="container home_page">
+                <div class="top_line">
+                    <div class="title_block">
+                        <a class="logo" href="/">
+                            <img src="/img/logo.png" alt="">
+                        </a>
+                        <div class="title_text">
+                            <p class="slogan">Россия</p>
+                            <a class="city city_more" href="#">показать все города</a>
+                        </div>
+                        <div class="bg_right"></div>
+                    </div>
+                </div>
+                <div class="hello_block">
+                    <p class="hello_block_title">Привет, Россия!</p>
+                    <p>Перед вами карта отделений городских проектов.</p>
+                    <select name="">
+                        <option value="">Выберите город</option>
+                        <option value="">Москва</option>
+                        <option value="">Санкт-Петербург</option>
+                    </select>
+                    <p>для быстрого перехода</p>
+                    <p>на сайт отделения</p>
+                    <input type="text" placeholder="Введите ваш email">
+                    <p>для регистрации или входа на сайт,или войдите через соц. сети:</p>
+                    <ul class="blogs_link">
+                        <li>
+                            <a href="#" class="vk"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="tw"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Форма входа -->
+                <!--<div class="main_login_form">
+                    <p class="hello_block_title">Привет, Россия!</p>
+                    <form action="" method="POST">
+                        <div class="input_div">
+                            <label>Логин</label>
+                            <input type="text">
+                        </div>
+                        <div class="input_div">
+                            <label>Пароль</label>
+                            <input type="text">
+                        </div>
+                        <input type="submit" value="Войти на сайт">
+                    </form>
+                    <a href="#">Регистрация на сайте</a>
+                </div>
+                -->
+            </div>
+		</div>
+		<div class = "empty"></div>
+	</div>
+    <footer role = "contentinfo" class="footer_main">
+        <div class = "container">
+            <div class="column">
+                <p class="copyright">&copy; Городские проекты, 2014</p>
+            </div>
+            <div class="column column2">
+                <select name="" id="">
+                    <option value="">Выберите город</option>
+                    <option value="">Москва</option>
+                    <option value="">Санкт-Петербург</option>
+                </select>
+            </div>
+            <div class="column column3">
+                <a href="#">Соглашение об использовании</a>
+            </div>
+        </div>
+    </footer>
+    <!-- WEB STUDIO PINGVISHA - http://pingvisha.ru  -->
+</body>
+</html>
